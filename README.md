@@ -20,8 +20,12 @@ The naming convention in use by Harvard Med School has certain requirements that
 
 NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
 
+Of course your needs may  be very different.  Hopefully this script will help point you in the right direction or give you some new ideas to solve the problem.
+
 ## Using NTM
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
+
+NTM requires a current version of SwiftDialog.  It will check for and install it if necessary.
 
 **Parameter #4**: "Self Service" or "Provisioning"; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
@@ -64,11 +68,9 @@ NTM is intended to be used in several use cases using Jamf Script Parameters (Pa
 When used in conjunction with SYM, I added a line to SYM to call the Jamf policy that runs NTM. This will cause NTM to launche *after* the SYM Welcome dialog but before the Setup dialog.
 Doing it this way resolved a long delay between the 2 Jamf policies and made the overall flow much cleaner and freindlier.
 
-
-
 ### Disclaimer
-I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  With tha tin mind feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
+I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  With that in mind feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
 
-Support; Writing scripts is not my strength and not my primary function and most of this work off-hours so please consider this script to be unsupported. I can't gaurantee it will work in your enviroment or for your needs .  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
+Support; Writing scripts is not my strength and not my primary function and most of this work off-hours so please use this script at your own risk. I can't gaurantee it will work in your enviroment or for your needs.  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
 
 If your question is related to SwiftDialog, please see the [SwiftDialog](https://github.com/swiftDialog/swiftDialog/wiki) wiki page.
