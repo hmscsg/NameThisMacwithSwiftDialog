@@ -19,7 +19,7 @@ Parameter #5: "Tech" mode or  "Standard" mode; Standard is default.  This parame
 
 Parameter #6: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.
 
-### Parameter 7: Unfinished Work
+*Parameter 7: Unfinished Work*
 Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
 Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Paramenter 7 and naming conventions for multiple groups is incomplete. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
 
