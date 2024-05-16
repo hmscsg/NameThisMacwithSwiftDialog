@@ -11,6 +11,15 @@ Enter *Name This Mac* (here on referenced as NTM).
 
 With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I only need to edit less than 30 lines of code making upgrading SYM much easier.  Using Jamf parameters I was able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYM and also create an option where the suggested name could be modifed by technicians running the policy to account for edge cases.
 
+### About the naming convention
+The naming convention in use by Harvard Med School has certain requirements that make it complicated;
+- It needs to start with "M" (for Med school)
+- Needs to be 15 characters or less.  Not a technical necessity, but to keep it in line with the Windows naming convention.
+- Needs to have a 3-4 letter deptment code and a 3-4 letter location code.  Full names are too long and hard to read.
+- Should include a unique identifier at the end, such as Asset# or something.  Serials are too long, and would be truncated anyways.
+
+NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
+
 ## Using NTM
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
