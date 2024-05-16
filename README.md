@@ -67,8 +67,8 @@ Doing it this way resolved a long delay between the 2 Jamf policies and made the
 
 
 ### Disclaimer
-I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  Phil.
+I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  With tha tin mind feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
 
-Feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
-Support; Writing scripts is not my primary function; I've done most of this work off-hours when I have time, so this script should be considered unsupported. I can't gaurantee it will work in your enviroment or for your needs .  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
+Support; Writing scripts is not my strength and not my primary function and most of this work off-hours so please consider this script to be unsupported. I can't gaurantee it will work in your enviroment or for your needs .  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
+
 If your question is related to SwiftDialog, please see the [SwiftDialog](https://github.com/swiftDialog/swiftDialog/wiki) wiki page.
