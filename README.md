@@ -23,7 +23,8 @@ Parameter #6: Debug mode; true is default.  When true, the script runs in defaul
 Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Paramenter 7 and naming conventions for multiple groups is incomplete. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
 
 ### Buildings and Locations
-There are 4 variable fields that need your editing.  Read the comments on or around Line 77.
+There are 4 variable fields that need your editing.  Read the comments starting around Line 77.
+
 departmentListRaw: A list of your departments, separated by a comma. Note that there is one called "Please select your department".  This selection is a default in case the user does not select a department from the menu.
 
 deptNameCodeList: A list of Department names followed by a 2-3 letter code.  This needs to be formatted properly otherwise the code matching will fail.
