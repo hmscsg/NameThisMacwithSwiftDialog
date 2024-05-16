@@ -68,7 +68,12 @@ NTM is intended to be used in several use cases using Jamf Script Parameters (Pa
 - Lines 382 and 390; There is regex in Line 390 intended to validate that the Asset # looks like it should, which in our case is 3 letters followed by 5 numbers. Replace Line 382 with Line 390, modified as needed.
 
 ## Using with SetupYourMac
-When used in conjunction with SYM, I added a line to SYM to call the Jamf policy that runs NTM. This will cause NTM to launche *after* the SYM Welcome dialog but before the Setup dialog.
+Using SYM-Helper, I disabled all of the Setup Your Mac user input fields, as they were no longer needed.  The Setup Your Mac Welcome dialog is only sued to convey support information to the user.
+In the SetupYourMac script I added 2 lines 2863/2864 (plus supporting comments) to call NTM from within SYM.
+`eval "${jamfBinary} policy -event MPT-NameThisMac ${suppressRecon}"`
+`updateScriptLog "NAME THIS MAC: Setting up the computer name …"`
+  
+This will cause NTM to launch *after* the SYM Welcome dialog but before the Setup dialog. 
 Doing it this way resolved a long delay between the 2 Jamf policies and made the overall flow much cleaner and freindlier.
 
 ### Disclaimer
