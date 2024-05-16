@@ -11,7 +11,7 @@ Enter *Name This Mac* (here on referenced as NTM).
 With NTM, I was able to separate the script needed for computer naming from the SYM code, making upgrading SYM much easier.  Using Jamf parameters I was also able to create use cases where NTM could be run as a standalone Self Service policy or as part of the SYM provisioning process, and also create an option where the suggested name could be modifed by technicians running the policy.
 
 ## Using NTM
-NTM is meant to run within a Jamf policy. Add the NTM script to Jamf, then create a new policy with the script as the payload.  Be sure to set the Parameters before running it.
+NTM is meant to run within a Jamf policy. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
 Parameter #4: Self Service or Provisioning; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
@@ -53,3 +53,7 @@ Doing it this way resolved a long delay between the 2 Jamf policies and made the
 
 ### Disclaimer
 I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  Phil.
+
+Feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
+Support; Writing scripts is not my primary function; I've done most of this work off-hours when I have time, so this script should be considered unsupported.  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
+If your question is related to SwiftDialog, please see the [SwiftDialog](https://github.com/swiftDialog/swiftDialog/wiki) wiki page.
