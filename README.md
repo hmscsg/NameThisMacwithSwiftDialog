@@ -72,6 +72,7 @@ Using SYM-Helper, I disabled all of the Setup Your Mac user input fields, as the
 In the SetupYourMac script I added 2 lines 2863/2864 (plus supporting comments) to call NTM from within SYM.
 
 `eval "${jamfBinary} policy -event MPT-NameThisMac ${suppressRecon}"`
+
 `updateScriptLog "NAME THIS MAC: Setting up the computer name …"`
   
 The first line will call to Jamf to run the NTM policy, causing NTM to launch *after* the SYM Welcome dialog but before the Setup dialog.
