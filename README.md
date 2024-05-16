@@ -1,5 +1,6 @@
 # NameThisMacwithSwiftDialog
 16-MAY-2024
+
 Name This Mac with Swift Dialog is a shell script used to set the computer name in Mac OS.
 It uses Bart Reardon's [SwiftDialog](https://github.com/swiftDialog/swiftDialog) and is inspired by Dan Snelson's [Setup Your Mac](https://github.com/setup-your-mac/Setup-Your-Mac) (and other works)
 
@@ -13,13 +14,13 @@ With NTM, I was able to separate the script needed for computer naming from the 
 ## Using NTM
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
-Parameter #4: Self Service or Provisioning; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
+**Parameter #4**: Self Service or Provisioning; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
-Parameter #5: "Tech" mode or  "Standard" mode; Standard is default.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
+**Parameter #5**: "Tech" mode or  "Standard" mode; Standard is default.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
 
-Parameter #6: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.
+**Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.  **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 164/165 to enable the Jamf parameter.
 
-*Parameter 7: Unfinished Work*; Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
+**Parameter 7: Unfinished Work**: Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
 Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Paramenter 7 and naming conventions for multiple groups is incomplete. Most of the relevant lines are still present but commented out. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
 
 Other variables
