@@ -26,7 +26,7 @@ Of course your needs may  be very different.  Hopefully this script will help po
 
 ## Using NTM
 
-You can run NTM as is in Terminal without making any changes just to see what it does.  The default setup will prevent any changes from actually being made (See notes ahout Parameter 6 below)
+You can run NTM as is in Terminal without making any changes just to see what it does.  The default setup will prevent any changes from actually being made (See notes about Parameter 6 below)
 
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
