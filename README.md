@@ -9,12 +9,12 @@ When we started using Setup Your Mac, 100's of lines in the SYM script were heav
 
 Enter *Name This Mac* (here on referenced as NTM).
 
-With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I only need to edit less than 30 lines of code making upgrading SYM much easier.  Using Jamf parameters I was able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYm, and also create an option where the suggested name could be modifed by technicians running the policy.
+With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I only need to edit less than 30 lines of code making upgrading SYM much easier.  Using Jamf parameters I was able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYM and also create an option where the suggested name could be modifed by technicians running the policy to account for edge cases.
 
 ## Using NTM
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
-**Parameter #4**: Self Service or Provisioning; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
+**Parameter #4**: "Self Service" or "Provisioning"; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
 **Parameter #5**: "Tech" mode or  "Standard" mode; Standard is default.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
 
@@ -28,15 +28,15 @@ Parameter 7 in this script is intended to account for each of the 3 naming stand
 Modify other variables according ot your needs, such as log file location, branding and icon images, language that appears in each of the dialog windows, etc.
 
 ### Buildings and Locations
-There are 4 variable fields that need your editing.  Read the comments starting around Line 77.
+There are 4 variable fields that need to be changed to meet your needs.  Read the comments starting around Line 77.
 
-departmentListRaw: A list of your departments, separated by a comma. Note that there is one called "Please select your department".  This selection is a default in case the user does not select a department from the menu.
+**departmentListRaw**: A list of your departments, separated by a comma. Note that there is one called "Please select your department".  This selection is a default in case the user does not select a department from the menu.
 
-deptNameCodeList: A list of Department names followed by a 2-3 letter code.  This needs to be formatted properly otherwise the code matching will fail.
+**deptNameCodeList**: A list of Department names followed by a 2-3 letter code.  This needs to be formatted properly otherwise the code matching will fail.
 
-locationListRaw: Just like the departmentListRaw, but for locations, ie Building or whatever you need.
+**locationListRaw**: Just like the departmentListRaw, but for locations, ie Building or whatever you need.
 
-locationNameCodeList: Just like deptNameCodeList, but for locations.
+**locationNameCodeList**: Just like deptNameCodeList, but for locations.
 
 ## Use cases
 NTM is intended to be used in several use cases using Jamf Script Parameters (Parameters 4 & 5)
