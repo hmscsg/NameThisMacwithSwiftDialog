@@ -77,7 +77,7 @@ In the SetupYourMac script I added 2 lines 2863/2864 (plus supporting comments) 
   
 The first line will call to Jamf to run the NTM policy, causing NTM to launch *after* the SYM Welcome dialog but before the Setup dialog.
 The second line updates the log file, and both SYM and NTM are configured to write to the same log file.
-Doing it this way resolved a long delay between the SYM and NTM Jamf policies when they were run as 2 independent policies and made the overall flow much cleaner and freindlier.
+Doing it this way resolved a long delay between the NTM and SYM Jamf policies when they were run as 2 independent policies and made the overall flow much cleaner and freindlier.
 
 ### Disclaimer
 I'm an imperfect human imperfectly learning to write imperfect scripts, thereby doing the right thing the wrong way for the right reasons.  With that in mind feel free to use this script in whatever way you choose.  I enjoy learning new things even if I don't always pick them up right away, so if you find ways to improve it or add new features please let me know.
