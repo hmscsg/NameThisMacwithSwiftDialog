@@ -17,7 +17,7 @@ With NTM, I was able to separate the script needed for computer naming from the 
 The naming convention in use by Harvard Med School has certain requirements that make it complicated;
 - It needs to start with "M" (for Med school). The other groups have different prefixes of different lengths.
 - Needs to be 15 characters or less.  Not a technical necessity, but to keep it in line with the Windows naming convention.
-- Needs to have a 3-4 letter deptment code and a 3-4 letter location code.  Full names are too long and hard to read.
+- Needs to have a 3-4 letter department code and a 3-4 letter location code.  Full names are too long and hard to read.
 - Should include a unique identifier at the end, such as Asset# or something.  Serials are too long, and would be truncated anyways.
 
 NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
