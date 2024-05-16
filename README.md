@@ -76,4 +76,6 @@ I'm an imperfect human imperfectly learning to write imperfect scripts, thereby 
 
 Support; Writing scripts is not my strength and not my primary function and most of this work off-hours so please use this script at your own risk. I can't gaurantee it will work in your enviroment or for your needs.  If you need help, I'll try, but I'll probably google it just like you.  You'll probably google it better.
 
+If you don't like comments, you'll hate this script.  I like comments, as it helps the current me, the future me and the future replacement me figure out what was going on inside the vacant lot in my head.
+
 If your question is related to SwiftDialog, please see the [SwiftDialog](https://github.com/swiftDialog/swiftDialog/wiki) wiki page.
