@@ -23,7 +23,7 @@ NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf
 **Parameter 7: Unfinished Work**: Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
 Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Paramenter 7 and naming conventions for multiple groups is incomplete. Most of the relevant lines are still present but commented out. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
 
-Other variables
+**Other variables**
 
 Modify other variables according ot your needs, such as log file location, branding and icon images, language that appears in each of the dialog windows, etc.
 
