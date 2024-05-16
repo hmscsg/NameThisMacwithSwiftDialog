@@ -4,16 +4,18 @@
 Name This Mac with Swift Dialog is a shell script used to set the computer name in Mac OS.
 It uses Bart Reardon's [SwiftDialog](https://github.com/swiftDialog/swiftDialog) and is inspired by Dan Snelson's [Setup Your Mac](https://github.com/setup-your-mac/Setup-Your-Mac) (SYM) and other works.
 
+When run the script will check for and if necessary install Swift Dialog.  It will then create a nice to look at user interface with several fields and menus to be filled out by the user.
+
 This script was written because my organization has a complicated computer naming policy established many years ago.  My grad school also manages Jamf for 1 other grad school and a large research department.
 When we started using Setup Your Mac, 100's of lines in the SYM script were heavily modified to accommodate our needs, but it wasn't quite perfect, as it didn't account for all 3 groups that use our Jamf environment. And it made upgrading to later versions of SYM difficult.
 
 Enter *Name This Mac* (here on referenced as NTM).
 
-With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I only need to edit less than 30 lines of code making upgrading SYM much easier.  Using Jamf parameters I was able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYM and also create an option where the suggested name could be modifed by technicians running the policy to account for edge cases.
+With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I need to edit less than 30 lines of code to make SYM ready for testing, making my job much easier.  Using Jamf parameters I'm able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYM and also create an option where the suggested name could be modifed by technicians running the policy to account for edge cases.
 
 ### About the naming convention
 The naming convention in use by Harvard Med School has certain requirements that make it complicated;
-- It needs to start with "M" (for Med school)
+- It needs to start with "M" (for Med school). The other groups have different prefixes of different lengths.
 - Needs to be 15 characters or less.  Not a technical necessity, but to keep it in line with the Windows naming convention.
 - Needs to have a 3-4 letter deptment code and a 3-4 letter location code.  Full names are too long and hard to read.
 - Should include a unique identifier at the end, such as Asset# or something.  Serials are too long, and would be truncated anyways.
@@ -24,8 +26,6 @@ Of course your needs may  be very different.  Hopefully this script will help po
 
 ## Using NTM
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
-
-NTM requires a current version of SwiftDialog.  It will check for and install it if necessary.
 
 **Parameter #4**: "Self Service" or "Provisioning"; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
