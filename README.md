@@ -25,6 +25,9 @@ NTM collects the necessary information needed to construct the name, informs the
 Of course your needs may  be very different.  Hopefully this script will help point you in the right direction or give you some new ideas to solve the problem.
 
 ## Using NTM
+
+You can run NTM as is in Terminal without making any changes just to see what it does.  The default setup will prevent any changes from actually being made (See notes ahout Parameter 6 below)
+
 NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
 **Parameter #4**: "Self Service" or "Provisioning"; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
