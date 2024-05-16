@@ -10,6 +10,15 @@ Enter *Name This Mac* (here on referenced as NTM).
 
 With NTM, I was able to separate the script needed for computer naming from the SYM code, making upgrading SYM much easier.  Using Jamf parameters I was also able to create use cases where NTM could be run as a standalone Self Service policy or as part of the SYM provisioning process, and also create an option where the suggested name could be modifed by technicians running the policy.
 
+## Using NTM
+NTM is meant to run within a Jamf policy. Add NTM as a script to Jamf, then create a new policy with the script as the payload.  Be sure to set the Parameters before running it.
+
+Parameter #4: Self Service or Provisioning. This parameter changes the text and the button behavior in the dialog windows. Self Service is the default setting.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
+
+Parameter 5: "Tech" mode or  "Standard" mode.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
+
+### Buildings and Locations
+
 ## Use cases
 NTM is intended to be used in several use cases using Jamf Script Parameters (Parameters 4 & 5)
 - As a Self Service Policy (Parameter 4) by a "normal" user (Prevents modifying the suggested computer name, exits when finished)
