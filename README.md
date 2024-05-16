@@ -28,7 +28,7 @@ Of course your needs may  be very different.  Hopefully this script will help po
 
 You can run NTM as is in Terminal without making any changes just to see what it does.  The default setup will prevent any changes from actually being made (See notes about Parameter 6 below)
 
-NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create mmultiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
+NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf, then create a new policy with the script as the payload.  You can create multiple policies with the same payload and different parameters, so if the script needs updating you only need to do it once.
 
 **Parameter #4**: "Self Service" or "Provisioning"; Self Service is default. This parameter changes the text and the button behavior in the dialog windows.  If you want to run NTM during a provisioning workflow, set Parameter 4 to Provisioning and add the Jamf policy to your provisioning workflow.
 
@@ -37,7 +37,7 @@ NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf
 **Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.  **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 164/165 to enable the Jamf parameter.
 
 **Parameter #7: Unfinished Work**: Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
-Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Paramenter 7 and naming conventions for multiple groups is incomplete. Most of the relevant lines are still present but commented out. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
+Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Parameter 7 and naming conventions for multiple groups is incomplete. Most of the relevant lines are still present but commented out. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
 
 **Other variables**
 
