@@ -8,6 +8,8 @@ When run the script will check for and if necessary install Swift Dialog.  It wi
 
 NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
 
+### Why did I write this?
+
 This script was written because my organization has a complicated computer naming policy established many years ago.  My grad school also manages Jamf for 1 other grad school and a large research department.
 When we started using Setup Your Mac, 100's of lines in the SYM script were heavily modified to accommodate our computer naming needs, but it wasn't quite perfect, as it didn't account for all 3 groups that use our Jamf environment. And it made upgrading to later versions of SYM difficult.
 
@@ -45,7 +47,8 @@ NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf
 
 **Parameter #5**: "Tech" mode or  "Standard" mode; Standard is default.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
 
-**Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.  **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 155/156 to enable the Jamf parameter.
+**Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.
+- **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 155/156 to enable the Jamf parameter.
 
 **Other variables**
 
