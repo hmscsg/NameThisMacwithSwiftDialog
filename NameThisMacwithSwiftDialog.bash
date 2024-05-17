@@ -21,7 +21,7 @@
 #	Name This Mac (NTM) is a script used to collect information from the user which is then used to construct and set a computer name.
 #
 #	Usage
-#	NTM is intended to be used in several use cases using Jamf Script Parameters (Parameters 4 & 5)
+#	NTM is intended to be used ine one or more JAMF policies under different use cases using Jamf Script Parameters (Parameters 4 & 5)
 #	- As a Self Service Policy by a "normal" user (Prevents modifying the suggested computer name, exits when finished)
 #	- As a Self Service Policy by a field tech or Asset Team member (Allows modifying the suggested name, exits when finished)
 #	- As part of SetupYourMac (SYM), by a "normal" user (Prevents modifying the suggested computer name, continues to SYM when finished)
@@ -33,7 +33,7 @@
 #	- Our Asset tags have :HMS as the prefix followed by 5 numbers.  We use regex to validate the format. Replace Line 351 with Line 360 and modify as neede.
 #
 #	When used in conjunction with SYM, HMS has injected NTM into the SYM script so that NTM launches *after* the SYM Welcome dialog, but before the Setup dialog.
-#	Doing it this way resolved a long delay between the 2 scripts, and makes the overall flow much cleaner and freindlier.
+#	Doing it this way resolved a long delay between the 2 scripts, and makes the overall flow much cleaner and freindlier. More information is in the ReadMe.
 #
 #	History
 #	16-May-2024 - Initial Public Release
