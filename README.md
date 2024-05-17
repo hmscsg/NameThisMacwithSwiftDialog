@@ -6,21 +6,32 @@ It uses Bart Reardon's [SwiftDialog](https://github.com/swiftDialog/swiftDialog)
 
 When run the script will check for and if necessary install Swift Dialog.  It will then create a nice to look at user interface with several fields and menus to be filled out by the user.
 
+NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
+
 This script was written because my organization has a complicated computer naming policy established many years ago.  My grad school also manages Jamf for 1 other grad school and a large research department.
-When we started using Setup Your Mac, 100's of lines in the SYM script were heavily modified to accommodate our needs, but it wasn't quite perfect, as it didn't account for all 3 groups that use our Jamf environment. And it made upgrading to later versions of SYM difficult.
+When we started using Setup Your Mac, 100's of lines in the SYM script were heavily modified to accommodate our computer naming needs, but it wasn't quite perfect, as it didn't account for all 3 groups that use our Jamf environment. And it made upgrading to later versions of SYM difficult.
 
 Enter *Name This Mac* (here on referenced as NTM).
 
 With NTM, I was able to separate the script needed for computer naming from the SYM code.  Now, when upgrading SYM, I need to edit less than 30 lines of code to make SYM ready for testing, making my job much easier.  Using Jamf parameters I'm able to create use cases where NTM could be run as a standalone Self Service policy or as a policy that runs as part of our internal provisioning workflow with SYM and also create an option where the suggested name could be modifed by technicians running the policy to account for edge cases.
 
 ### About the naming convention
-The naming convention in use by Harvard Med School has certain requirements that make it complicated;
-- It needs to start with "M" (for Med school). The other groups have different prefixes of different lengths.
-- Needs to be 15 characters or less.  Not a technical necessity, but to keep it in line with the Windows naming convention.
-- Needs to have a 3-4 letter department code and a 3-4 letter location code.  Full names are too long and hard to read.
-- Should include a unique identifier at the end, such as Asset# or something.  Serials are too long, and would be truncated anyways.
 
-NTM collects the necessary information needed to construct the name, informs the user what the name will be, sets the name, then sends a jamf recon with the User ID to update the computer record.
+This script constructs a computername in the following format:
+
+**Prefix**: Set in Line 426
+
+**Department Code**: Established by code starting in Line 85. Read more about this in the **Buildings and Locations** section below
+
+**Location Code**: Established by code starting in Line 113
+
+**Computer Type**: "L" (Laptop) or "D" (Desktop)
+
+**Asset Tag** (or random string): If a value is entered in the Asset Tag field, the last 5 characters will be used as a unique identifier, otherwise a random string up to 5 characters is generated.
+
+**Suffix**: Set in Line 427
+
+The final name will look like `<prefix><Department Code><Location Code><Computer Type><Asset Tag><Suffix>`
 
 Of course your needs may  be very different.  Hopefully this script will help point you in the right direction or give you some new ideas to solve the problem.
 
