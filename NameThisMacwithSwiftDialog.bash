@@ -390,7 +390,7 @@ if [[  -z "$assetTag" ]]; then
 else
 	updateLog "NAME THIS MAC USER INFO:  The Asset Tag is: $assetTag"
 	# Get the number portion of the Asset Tag
-	assetTagNumber=${assetTag: -5}
+	assetTagNumber=${assetTag: -5}  # Note: if there are less than 5 characters the Asset Tag value may not be set. If you have an Asset Tag with less than 5 characters change the "-5" to a smaller number.
 	updateLog "NAME THIS MAC USER INFO:  Asset Numbers Only: $assetTagNumber."
 fi
 
