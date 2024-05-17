@@ -14,6 +14,7 @@ This script was written because:
 - My grad school has a complicated computer naming policy established many years ago.
 - We also manage JAMF for 1 other grad school and a large research department with different naming conventions.
 - We needed a computer naming workflow that was integrated with our provisioning workflow, otherwise names would not get set in a timely manner, if at all.
+- We needed a computer name that was no more than 15 characters.  This was a non-technical decision in order to keep macOS and Windows computer name schemes identical (Windows is limited to 15 characters due to archaic netbios rules)
 - We needed to be sure to capture the computer "assigned to" user ID into JAMF.
 
 When we started using Setup Your Mac early last year I added and modified 100's of lines in the SYM script to accommodate our computer naming needs, but it wasn't quite perfect.  It didn't account for all 3 groups that use our JAMF environment, it didn't account for the frequent edge cases that required a different name and it made upgrading to later versions of SYM difficult at best.
