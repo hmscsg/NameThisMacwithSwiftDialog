@@ -34,17 +34,14 @@ NTM is meant to run within one or more Jamf policies. Add the NTM script to Jamf
 
 **Parameter #5**: "Tech" mode or  "Standard" mode; Standard is default.  This parameter changes the text in the Name confirmation dialog.  In Tech mode, the person running the policy will be able to change the suggested name to something other than the suggested name.  Its useful for edge cases, but my organization does not allow this when used in conjunction with our provisioning workflow.
 
-**Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.  **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 164/165 to enable the Jamf parameter.
-
-**Parameter #7: Unfinished Work**: Harvard University is highly decentralized, with 13 major Schools and administrative groups, all with their own standards.  Harvard Medical School, just one of the 13, supports 2 other schools/major departments in our Jamf environment, each with their own computer naming standard.
-Parameter 7 in this script is intended to account for each of the 3 naming standards in use, however as of this moment the other groups have not committed to using this naming tool or our SYM provisioning workflow so the effort around Parameter 7 and naming conventions for multiple groups is incomplete. Most of the relevant lines are still present but commented out. I left it there because the script works as is, and I do anticipate finishing it if only to know that I can do it. Do with it what you will.
+**Parameter #6**: Debug mode; true is default.  When true, the script runs in default mode.  It will log everything and do almost everything, except change the computer name.  **NOTE**: Read line 4!  DEBUG is hard coded to be enabled so that unintentional mistakes aren't made.  I made enough of them myself that I needed to do this to maintain what little sanity I have left.  When ready to put into your Jamf enviroment, modify lines 155/156 to enable the Jamf parameter.
 
 **Other variables**
 
 Modify other variables according ot your needs, such as log file location, branding and icon images, language that appears in each of the dialog windows, etc.
 
 ### Buildings and Locations
-There are 4 variable fields that need to be changed to meet your needs.  Read the comments starting around Line 77.
+There are 4 variable fields that need to be changed to meet your needs.  Read the comments starting around Line 68.
 
 **departmentListRaw**: A list of your departments, separated by a comma. Note that there is one called "Please select your department".  This selection is a default in case the user does not select a department from the menu.
 
@@ -62,14 +59,18 @@ NTM is intended to be used in several use cases using Jamf Script Parameters (Pa
 - Integrated with SetupYourMac (Parameter 5), by a field tech or Asset Team member (Allows modifying the suggested name, continues to SYM when finished)
 
 ## User ID's
-- Line 382: The regex used in the dialog will validate against a user ID containing 2-4 letters followed by 1-4 numbers.  Modify as needed.
+- Line 349: This line accepts a user ID in any format, without any sort of validation. If you need User ID validation replace Line 349 with Line 357.
+- Line 357: Contains regex to validate against a user ID containing 2-4 letters followed by 1-4 numbers.  Modify as needed.
+- User ID information is passed to Jamf during a Jamf recon at the end of the script.
 
 ## Asset tags
-- Lines 382 and 390; There is regex in Line 390 intended to validate that the Asset # looks like it should, which in our case is 3 letters followed by 5 numbers. Replace Line 382 with Line 390, modified as needed.
+- Lines 382: This line accepts a an Asset tag value in any format, without any sort of validation. If you need Asset tag validation replace Line 382 with Line 390.
+- Line 390: Contains regex to validate against an Asset tag containing 3 letters followed by 5 numbers. Modify as needed.
+- Asset tag information is passed to Jamf during a Jamf recon at the end of the script.
 
 ## Using with SetupYourMac
 Using SYM-Helper, I disabled all of the Setup Your Mac user input fields, as they were no longer needed.  The Setup Your Mac Welcome dialog is only used to convey support information to the user.
-In the SetupYourMac script I added 2 lines 2863/2864 (plus supporting comments) to call NTM from within SYM.
+In the SetupYourMac script reference version I added 2 lines, 2863/2864 (plus supporting comments), to call NTM from within SYM.
 
 `eval "${jamfBinary} policy -event MPT-NameThisMac ${suppressRecon}"`
 
